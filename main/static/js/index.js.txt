@@ -1,0 +1,6 @@
+const sendBtn = document.queySelector('.send-form');
+
+sendBtn.addEventListener('click', () => {
+    const messageList = document.queySelector('.message-list');
+    messageList.scrollTo(0, messageList.height);
+})

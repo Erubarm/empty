@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  {% if find != "" %}
+  <a href="{% url 'index' %}" class="return"> < </a>
+  <br>
+  {% endif %}
+
+  <div class="menu">
+    <a href="{% url 'create-chat' %}">Создать чат</a>
+    {% for chat in chats %}
+      <div class="menu-elements">
+
+          <div>
+              <a href="{% url 'chat' chat.id %}"> {{chat.name}}</a>
+          </div>
+          <div class="name-author-chat">{{chat.author.username}}</div>
+
+      {% if request.user == chat.author %}
+          <div class="create-delete">
+          <a href="{% url 'chat-up' chat.id %}">Редактировать</a>
+          <a href="{% url 'delete-chat' chat.id %}">Удалить</a>
+          </div>
+      {% endif %}
+
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

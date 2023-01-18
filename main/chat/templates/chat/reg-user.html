@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+ <div class="reg-user">
+     <p class="name-reg">Регистрация</p>
+
+     <form method="POST" action="">
+         {% csrf_token %}
+         <label>Ваше имя:</label>
+         {{form.username}}
+         <p> Имя пользователя может содержать только буквы, цифры и символы @/./+/-/_</p>
+         <br>
+
+         <label>Пароль:</label>
+         {{form.password1}}
+         <p>Ваш пароль не может быть слишком похож на другую вашу личную информацию.</p>
+         <p>Ваш пароль должен содержать не менее 8 символов.</p>
+         <p>Ваш пароль не может быть часто используемым паролем.</p>
+         <p>Ваш пароль не может быть полностью числовым.</p>
+         <br>
+
+         <label>Повторите пароль:</label>
+         {{form.password2}}
+         <br><br>
+
+         <input type="submit" value="Зарегистрироваться" />
+         <br><br>
+     </form>
+
+     <a href="{% url 'log-user' %}">Авторизоваться  здесь</a>
+ </div>
+
+{% endblock content %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="{% static 'chat.css' %}">
+    <title>Yeeeeees</title>
+</head>
+
+<body>
+     {% if request.user.is_authenticated %}
+     <table class="nav">
+         <tr>
+             <td class="find">
+                 <form method="GET" action="{% url 'index' %}">
+                     <label>Поиск чата</label>
+                     <input type="text" name="find" placeholder="Найти..">
+                 </form>
+            </td>
+             <td>
+                 <p class="user-name"> Ваше имя: {{request.user}}</p>
+             </td>
+             <td>
+                 <div class="exit">
+                     <a href="{% url 'log-out' %}"> Выйти </a>
+                 </div>
+            </td>
+        </tr>
+    </table>
+     {% endif %}
+
+
+
+    {% block content %}
+
+
+    {% endblock content%}
+
+</body>
+
+</html>

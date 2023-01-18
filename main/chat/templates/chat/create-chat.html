@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <a href="{% url 'index' %}" class="return"> < </a>
+  <br>
+  <div class="create-form">
+      <form method="POST" action="">
+        {% csrf_token %}
+          <label>Название чата:</label>
+          <input type="text" placeholder="Введите название чата..." name="name">
+          <br>
+          <label>Описание:</label>
+          <input type="text" placeholder="Введите описание..." name="text">
+          <br>
+          <input type="submit" value="Создать" />
+      </form>
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,144 @@
+body{
+   background-image: url(image/fon-chat.jpg);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   text-shadow: 5px 5px 50px white;
+   font-size: 16pt;
+   font-family:Century Gothic,Verdana, Geneva, Tahoma, sans-serif;
+   transition: .5s ease-in-out;
+}
+.menu,.chat,.create-form,.del-message,.delete-chat,.log-user,.reg-user{
+    display:inline-block;
+    align-items: center;
+    justify-content: center;
+    width:70%;
+    margin-left:15%;
+    margin-top: 4%;
+    background-color:white;
+    opacity: 0.9;
+    filter: alpha(opacity = 90);
+    padding:2%;
+    border-radius: 30px;
+    font-weight:500;
+}
+.menu-elements {
+   text-shadow: 1px 1px 20px violet;
+   font-weight:700;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed violet;
+    border-radius: 30px 150px 30px 150px;
+    background-color:#FDD9B5;
+    padding: 3%;
+    margin: 2%;
+}
+.chat-elements{
+    text-shadow: 1px 1px 20px violet;
+    font-weight:500;
+    border: 1px violet;
+    border-radius: 30px;
+    background-color:#FDD9B5;
+    padding: 0.5%;
+    margin: 0.5%;
+    line-height: 1;
+    font-size: 12pt;
+word-break:break-all;
+}
+
+.name-author-chat, .name-reg,.name-log{
+   text-align:right;
+   color:blueviolet;
+}
+.name-author-message{
+   font-size: 12pt;
+   color:blueviolet;
+}
+
+.create-delete{
+   text-align: right;
+   color:blueviolet;
+   font-size: 12pt;
+
+}
+.exit{
+   font-size: 14pt;
+   margin: 1%;
+   padding: 1%;
+
+}
+.nav{
+   position: fixed;
+   background-color: #FDD9B5;
+   border-radius: 30px;
+   color: blueviolet;
+   text-align:center;
+   font-weight: 900;
+   width: 100%;
+   z-index:999;
+   padding: 0.1%;
+   margin: 0;
+   opacity: 0.9;
+
+   min-height:1.5%;
+   font-size: 14pt;
+}
+.return{
+   margin-top: 7%;
+   margin-left: 7%;
+   display: inline-block;
+   position: fixed;
+   text-shadow: 5px 5px 50px  #FDD9B5;
+   border-radius: 30%;
+   border-weight: 900;
+   background-color: white;
+   padding: 1%;
+}
+
+.message{
+   display: block;
+   text-align:center;
+   position: fixed;
+   bottom:2%;
+   background-color: white;
+   border-radius: 30px;
+   color: white;
+   width: 97%;
+   z-index:900;
+   padding:1%;
+}
+
+.name-chat{
+   text-align:center;
+   color: blueviolet;
+   font-weight: 900;
+}
+
+.message-list{
+    height:400px;
+    overflow:scroll;
+    overflow-x:hidden;
+}
+.message-list::-webkit-scrollbar {
+  width: 0;
+}
+
+a:link, a:visited, a:active, a {
+    text-decoration: none;
+   transition-duration: 0.5s;
+    text-shadow: 1px 1px 500px white;
+  }
+a:hover {
+   color: blue;
+  }
+
+.find{
+   width:20%;
+}
+
+.user-name{
+   background-color: blueviolet;
+   color:white;
+   border-radius:150px;
+   margin: 0 10%;
+}

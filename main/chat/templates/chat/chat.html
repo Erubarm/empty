@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <a href="{% url 'index' %}" class="return"> < </a>
+  <br>
+  <div class="chat">
+      <p class="name-chat"> {{chat.name}} </p>
+      <p> {{chat.text}} </p>
+
+      <div class="message-list">
+          {% for message in message %}
+           <div class="chat-elements">
+              <p class="name-author-message">{{message.user}} {{message.date}} </p>
+              <p>{{message.words}}</p>
+              {% if request.user == message.user %}
+              <p class="create-delete" ><a href="{% url 'del-message' message.id chat.id%}" >Удалить</a></p>
+              {% endif %}
+          </div>
+          {% endfor %}
+      </div>
+  </div>
+
+  <div class="message">
+      {% if request.user.is_authenticated %}
+      <form method="POST" action="">
+          {% csrf_token %}
+          <input type="text" name="words" placeholder="Сообщение...">
+          <input type="submit" value="Отправить" />
+      </form>
+      {% endif %}
+  </div>
+
+{% endblock content %}

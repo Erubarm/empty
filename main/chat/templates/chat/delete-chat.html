@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <a href="{{request.META.HTTP_PEFERER}}" class="return" > < </a>
+  <br>
+  <div class="delete-chat">
+      <form method="POST" action="">
+          {% csrf_token %}
+          <p>Точно хотите удалить чат под названием "{{chat}}"? </p>
+          <input type="submit" value="Удалить" />
+      </form>
+  </div>
+{% endblock content %}
